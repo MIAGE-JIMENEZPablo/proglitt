@@ -119,12 +119,6 @@ Which are slightly different from the true values.
 
 # Real Ping-Pong Measurements (TD)
 
-The measurements detailed in the introduction have been obtained for a number of different message sizes. We provide five of them here, with the following names:
-
-```{bash}
-ls data/PP_size*.csv
-```
-
 From 1 to 5 bytes. You should repeat all the steps of previous section using at least one of these files. Write your stastitical interpretation of the measurements. Here's how you can read one of them.
 
 ```{r}
