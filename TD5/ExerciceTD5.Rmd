@@ -1,0 +1,25 @@
+---
+title: "ExerciceTD5"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(readr);
+library(dplyr);
+library(magrittr);
+df <- read_tsv (file = "dpt2015.txt",
+locale = locale(encoding = "ISO-8859-1"));
+```
+
+```{r}
+df;
+```
+
+```{r}
+library(ggplot2);
+df %>% filter(preusuel %in% c("PABLO", "KATHLEEN")) %>% filter(annais!="XXXX") %>% group_by(preusuel, annais) %>% summarize(N=sum(nombre)) %>% ggplot(aes(x=annais, y=N, group=as.factor(preusuel), color=as.factor(preusuel)->Prénoms)) + geom_point() + geom_line() + theme_void();
+```
